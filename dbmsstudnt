@@ -1,0 +1,61 @@
+ ashin=# create table student1(rollno int,name varchar(20),branch varchar(20),primary key(rollno));NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "student1_pkey" for table "student1"
+CREATE TABLE
+ashin=# insert into student1 values(1,'albin','civil');
+INSERT 0 1
+ashin=# insert into student1 values(2,'ebin','electrical');
+INSERT 0 1
+ashin=# insert into student1 values(3,'dias','mechanical');
+INSERT 0 1
+ashin=# insert into student1 values(4,'dileep','msc');
+INSERT 0 1
+ashin=# select * from student1;
+ rollno |  name  |   branch   
+--------+--------+------------
+      1 | albin  | civil
+      2 | ebin   | electrical
+      3 | dias   | mechanical
+      4 | dileep | msc
+(4 rows)
+
+ashin=# delete from student1 where rollno='4';
+DELETE 1
+ashin=# select * from student1;
+ rollno | name  |   branch   
+--------+-------+------------
+      1 | albin | civil
+      2 | ebin  | electrical
+      3 | dias  | mechanical
+(3 rows)
+
+ashin=# alter table student1 add column class varchar(20);
+ALTER TABLE
+ashin=# select * from student1;
+ rollno | name  |   branch   | class 
+--------+-------+------------+-------
+      1 | albin | civil      | 
+      2 | ebin  | electrical | 
+      3 | dias  | mechanical | 
+(3 rows)
+
+ashin=# alter table student1 drop branch;
+ALTER TABLE
+ashin=# select * from student1;
+ rollno | name  | class 
+--------+-------+-------
+      1 | albin | 
+      2 | ebin  | 
+      3 | dias  | 
+(3 rows)
+
+ashin=# delete from student1;
+DELETE 3
+ashin=# select * from student1;
+ rollno | name | class 
+--------+------+-------
+(0 rows)
+
+ashin=# drop table student1;
+DROP TABLE
+ashin=# 
+
+
